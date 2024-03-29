@@ -127,3 +127,11 @@ Add shard
 mongos> sh.addShard("shard2rs/192.168.1.81:50004,192.168.1.81:50005,192.168.1.81:50006")
 mongos> sh.status()
 ```
+
+## References
+
+[Database Sharding](https://www.mongodb.com/features/database-sharding-explained)
+[Sharding in MongoDB](https://www.mongodb.com/docs/manual/sharding/)
+[Sharding Setup in MongoDB](https://youtu.be/7Lp6R4CmuKE?si=-HgYAX6_wtO12zEV)
+[Adding a Shard to Sharded Cluster](https://youtu.be/LGERGvEaPW0?si=W2o4pKjxuSfZN7RQ)
+[Sharding a MongoDB Collection](https://youtu.be/Rwg26U0Zs1o?si=AnEBEMW5_21rGUba)
