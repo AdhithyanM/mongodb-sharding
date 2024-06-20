@@ -1,5 +1,7 @@
 ## Set up Sharding using Docker Containers
 
+![sharding and replica sets img](https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/sharding-and-replica-sets.png)
+
 ### Config servers
 
 Start config servers (3 member replica set)
