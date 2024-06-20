@@ -2,7 +2,25 @@
 
 ![sharding and replica sets img](https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/sharding-and-replica-sets.png)
 
-### Config servers
+## Sharding 
+
+Sharding is a method for distributing data across multiple machines. It is used by MongoDB to support deployments with large data sets and high throughput operations. By distributing data across multiple servers or clusters, MongoDB can scale horizontally and handle a larger amount of data and more read/write operations.
+
+## Key Components in MongoDB Sharding
+
+#### Config Servers:
+
+Config servers store the metadata and configuration settings for the sharded cluster. This includes information about the chunks (subdivisions of data) and their locations. They are crucial for maintaining the mapping between the data and the shards, ensuring that queries are routed to the appropriate shard. Typically, config servers are deployed as a replica set to provide high availability and redundancy.
+
+#### mongos:
+
+mongos is a routing service or query router for sharded clusters. It acts as an intermediary between the client applications and the sharded cluster. When a client sends a query, mongos routes the query to the correct shard(s) based on the metadata stored in the config servers. Multiple mongos instances can be deployed to distribute the query load and provide redundancy.
+
+#### Shards:
+
+Shards are the individual database servers that hold subsets of the data. Each shard is a replica set, providing redundancy and high availability. Shards store the actual data and are responsible for the read and write operations for the data they contain. Data is distributed across shards in chunks, which are determined by the shard key.
+
+## Config servers
 
 Start config servers (3 member replica set)
 
@@ -32,7 +50,7 @@ rs.initiate(
 rs.status()
 ```
 
-### Shard 1 servers
+## Shard 1 servers
 
 Start shard 1 servers (3 member replicas set)
 
